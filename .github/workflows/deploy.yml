@@ -18,7 +18,7 @@ jobs:
           port: 22
           script: |
             # 1. 프로젝트 경로로 이동
-            cd ~/fastapi
+            cd ~/hello_fastapi
 
             # 2. git이 설치 되어있다는 가정하에 pull하기
             git pull origin master
@@ -32,5 +32,5 @@ jobs:
             fuser -k 8000/tcp || true
 
             # 5. nohub로 실행하고 로그는 app.log에 남기기
-            nohub python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 > app.log 2>&1
+            nohub python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
             
