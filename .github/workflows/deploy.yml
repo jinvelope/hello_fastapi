@@ -32,5 +32,5 @@ jobs:
             fuser -k 8000/tcp || true
 
             # 5. nohub로 실행하고 로그는 app.log에 남기기
-            nohub python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
+            nohup python3 -m uvicorn main:app --host 0.0.0.0 --port 8000 > app.log 2>&1 &
             
